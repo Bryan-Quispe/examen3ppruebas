@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Lint del codigo
-        run: npm run lint
+        run: npm run lint -- --max-warnings=0
 
       - name: Ejecutar pruebas
         run: npm test
