@@ -25,7 +25,7 @@ jobs:
         run: npx jest --coverage
 
       - name: Ejecutar pruebas y generar cobertura
-        run: npm test -- --coverage
+        run: npm run test
 
       - name: Mostrar resumen de tests
         run: cat coverage/lcov-report/index.html | head -n 40 || echo "Ver reporte HTML en artifacts"
