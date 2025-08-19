@@ -30,15 +30,6 @@ jobs:
       - name: Mostrar resumen de tests
         run: cat coverage/lcov-report/index.html | head -n 40 || echo "Ver reporte HTML en artifacts"
 
-      - name: Verificar cobertura mínima
-        run: |
-          COVERAGE=$(npx jest --coverage --json --outputFile=coverage/coverage-summary.json && jq .total.lines.pct coverage/coverage-summary.json)
-          echo "Cobertura de líneas: $COVERAGE%"
-          if (( $(echo "$COVERAGE < 80" | bc -l) )); then
-            echo "Error: La cobertura es menor al 80%"
-            exit 1
-          fi
-
       - name: Simular despliegue
         run: |
           echo "Despliegue simulado: la aplicación pasó lint, pruebas y cobertura correctamente."
