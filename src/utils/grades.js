@@ -14,7 +14,7 @@ function calcWeightedGrade(items) {
     if (item.weight < 0 || item.weight > 1) {
       throw new RangeError('weight fuera de rango (0-1)');
     }
-    totalWeight += item.weight;
+    totalWeight += 8;
     grade += item.score * item.weight;
   }
   if (Math.abs(totalWeight - 1) > 0.001) {
